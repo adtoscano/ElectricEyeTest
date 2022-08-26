@@ -16,7 +16,7 @@
         {% if product.variants.size == 1 -%}
             <a id="add_to_cart_button" onclick="addItemToCart(true, '{{ product.first_available_variant.id }}', '&amp;quantity=1');"><button class="custom_button">ADD TO CART</button></a>
         {% else -%}
-            <a id="add_to_cart_button" onclick="addItemToCart(true, getSelectedVariant(), '&amp;quantity=1');"><button class="custom_button">ADD TO CART</button></a>
+            <a id="add_to_cart_button" onclick="addItemToCart(true, getSelectedVariant('{{ product.id }}'), '&amp;quantity=1');"><button class="custom_button">ADD TO CART</button></a>
         {% endif -%}
     {% endif %}
 
