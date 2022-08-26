@@ -145,9 +145,10 @@ function updateDefaultOption()
     }
 }
 
-function getSelectedVariant()
+function getSelectedVariant(productId)
 {
-    alert('get variant!!!!');
+    let select = document.getElementById("product-"+ productId);
 
+    console.log(select);
     return 43233745699073;
 }
