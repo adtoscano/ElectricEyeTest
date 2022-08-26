@@ -148,7 +148,7 @@ function updateDefaultOption()
 function getSelectedVariant(productId)
 {
     let select = document.getElementById("product-"+ productId);
-
-    console.log(select);
-    return 43233745699073;
+    var option = select.options[select.selectedIndex];
+    console.log(option.value);
+    return option.value;
 }
