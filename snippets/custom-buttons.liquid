@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% comment %} Phase 1b
 {% endcomment %}
 
@@ -25,3 +26,32 @@
     </div>
 
 {% endif %}
+=======
+{% comment %} Phase 1b
+{% endcomment %}
+
+
+{% if product.available %}
+
+    {% if section.settings.custom_show_products_variants %}
+        {% include 'custom-products-variants' %}
+    {% endif %}
+
+    {% if section.settings.custom_buy_now_button %}
+        <a id="add_buy_now_button" onclick="addItemToCart(false, '{{ product.first_available_variant.id }}', '&amp;quantity=1');"><button class="custom_button">BUY NOW</button></a>
+    {% endif %}
+
+    {% if section.settings.custom_add_to_cart_button %}
+        {% if product.variants.size == 1 -%}
+            <a id="add_to_cart_button" onclick="addItemToCart(true, '{{ product.first_available_variant.id }}', '&amp;quantity=1');"><button class="custom_button">ADD TO CART</button></a>
+        {% else -%}
+            <a id="add_to_cart_button" onclick="addItemToCart(true, getSelectedVariant('{{ product.id }}'), '&amp;quantity=1');"><button class="custom_button">ADD TO CART</button></a>
+        {% endif -%}
+    {% endif %}
+
+    <div id="div_error" role="alert" style="display:hidden">
+        <span id="error_message"></span>
+    </div>
+
+{% endif %}
+>>>>>>> de82e6e535820f7ef838dc81bac4dc6c43da7311

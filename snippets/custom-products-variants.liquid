@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% if product.variants.size > 1 -%}
     <select id="product-{{ product.id }}" class="custom_select" onchange="productVariantChanged(this);">
         {% for productVariant in product.variants -%}
@@ -7,3 +8,14 @@
 {%- endif %}
 
 
+=======
+{% if product.variants.size > 1 -%}
+    <select id="product-{{ product.id }}" class="custom_select" onchange="productVariantChanged(this);">
+        {% for productVariant in product.variants -%}
+            <option value="{{ productVariant.id }}" data-handle="{{ product.handle }}" data-image="{{ productVariant.image | img_url:'master' }}" data-price="{{ productVariant.price }}" available="{{ productVariant.available }}" {% if productVariant.available == false %}disabled="disabled"{% endif %} data-currency="{{ shop.currency }}" >{{ productVariant.title }}{% if productVariant.available == false %}- Sold out{% endif %}</option>
+        {%- endfor %}
+    </select>
+{%- endif %}
+
+
+>>>>>>> de82e6e535820f7ef838dc81bac4dc6c43da7311
