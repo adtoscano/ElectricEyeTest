@@ -149,6 +149,6 @@ function getSelectedVariant(productId)
 {
     let select = document.getElementById("product-"+ productId);
     var option = select.options[select.selectedIndex];
-    console.log(option.value);
+
     return option.value;
 }
