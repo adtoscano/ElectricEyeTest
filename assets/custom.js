@@ -37,7 +37,7 @@ function addToCartSuccess(type, obj)
     if(type === true)
     {
         let cart = getCart();
-console.log(cart);
+
         updateCartCounter(cart);
         showCartPopup(cart);
     }
