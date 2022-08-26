@@ -1,8 +1,3 @@
-/*document.addEventListener("DOMContentLoaded", function(){
-    alert('ready');
-    updateDefaultOption();
-});*/
-
 window.addEventListener('load', function () {
     updateDefaultOption();
 });
