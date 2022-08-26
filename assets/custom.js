@@ -37,7 +37,7 @@ function addToCartSuccess(type, obj)
     if(type === true)
     {
         let cart = getCart();
-
+console.log(cart);
         updateCartCounter(cart);
         showCartPopup(cart);
     }
@@ -143,4 +143,12 @@ function updateDefaultOption()
             }
         }
     }
+}
+
+function getSelectedVariant(productId)
+{
+    let select = document.getElementById("product-"+ productId);
+    var option = select.options[select.selectedIndex];
+
+    return option.value;
 }
