@@ -26,7 +26,10 @@ function addItemToCart(obj, type, productId, quantity)
                 addToCartFail(this);
             }
 
-            showLoader(obj, type, false);
+            if(type == true || this.status != 200)
+            {
+                showLoader(obj, type, false);
+            }
         }
     }
 
