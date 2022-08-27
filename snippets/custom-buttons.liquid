@@ -14,7 +14,7 @@
 
     {% if section.settings.custom_add_to_cart_button %}
         {% if product.variants.size == 1 -%}
-            <a id="add_to_cart_button" onclick="addItemToCart(true, '{{ product.first_available_variant.id }}', '&amp;quantity=1');">
+            <a id="add_to_cart_button" onclick="addItemToCart(this, true, '{{ product.first_available_variant.id }}', '&amp;quantity=1');">
                 <button class="custom_button">
                     <span add-to-cart-text>ADD TO CART</span>
                     <span class="hide" data-loader="">
