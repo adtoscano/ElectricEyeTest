@@ -9,7 +9,14 @@
     {% endif %}
 
     {% if section.settings.custom_buy_now_button %}
-        <a id="add_buy_now_button" onclick="addItemToCart(this, false, '{{ product.first_available_variant.id }}', '&amp;quantity=1');"><button class="custom_button">BUY NOW</button></a>
+        <a id="add_buy_now_button" onclick="addItemToCart(this, false, '{{ product.first_available_variant.id }}', '&amp;quantity=1');">
+            <button class="custom_button">
+                <span add-to-cart-text>BUY NOW</span>
+                <span class="hide" data-loader="">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-spinner" viewBox="0 0 20 20"><path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path></svg>
+                </span>
+            </button>
+        </a>
     {% endif %}
 
     {% if section.settings.custom_add_to_cart_button %}
