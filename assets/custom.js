@@ -4,8 +4,7 @@ window.addEventListener('load', function () {
 
 function addItemToCart(type, productId, quantity)
 {
-    document.querySelector('span[add-to-cart-text]').classList.add('hide');
-    document.querySelector('span[data-loader]').classList.remove('hide');
+    showLoader(true);
 
     data = {
             "id": productId,
@@ -26,6 +25,8 @@ function addItemToCart(type, productId, quantity)
             {
                 addToCartFail(this);
             }
+
+            showLoader(false);
         }
     }
 
@@ -154,4 +155,18 @@ function getSelectedVariant(productId)
     var option = select.options[select.selectedIndex];
 
     return option.value;
+}
+
+function showLoader(state)
+{
+    if(state)
+    {
+        document.querySelector('span[add-to-cart-text]').classList.add('hide');
+        document.querySelector('span[data-loader]').classList.remove('hide');
+    }
+    else
+    {
+        document.querySelector('span[add-to-cart-text]').classList.remove('hide');
+        document.querySelector('span[data-loader]').classList.add('hide');
+    }
 }
