@@ -159,16 +159,16 @@ function getSelectedVariant(productId)
 
 function showLoader(obj, state)
 {
-    const parentDiv = obj.parentNode;
+    let parentNode = obj.parentNode;
     console.log(parentDiv);
     if(state)
     {
-        document.querySelector('span[add-to-cart-text]').classList.add('hide');
-        document.querySelector('span[data-loader]').classList.remove('hide');
+        parentNode.querySelector('span[add-to-cart-text]').classList.add('hide');
+        parentNode.querySelector('span[data-loader]').classList.remove('hide');
     }
     else
     {
-        document.querySelector('span[add-to-cart-text]').classList.remove('hide');
-        document.querySelector('span[data-loader]').classList.add('hide');
+        parentNode.querySelector('span[add-to-cart-text]').classList.remove('hide');
+        parentNode.querySelector('span[data-loader]').classList.add('hide');
     }
 }
