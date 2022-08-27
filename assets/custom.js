@@ -2,9 +2,9 @@ window.addEventListener('load', function () {
     updateDefaultOption();
 });
 
-function addItemToCart(type, productId, quantity)
+function addItemToCart(obj, type, productId, quantity)
 {
-    showLoader(true);
+    showLoader(obj, true);
 
     data = {
             "id": productId,
@@ -26,7 +26,7 @@ function addItemToCart(type, productId, quantity)
                 addToCartFail(this);
             }
 
-            showLoader(false);
+            showLoader(obj, false);
         }
     }
 
@@ -157,7 +157,7 @@ function getSelectedVariant(productId)
     return option.value;
 }
 
-function showLoader(state)
+function showLoader(obj, state)
 {
     if(state)
     {
