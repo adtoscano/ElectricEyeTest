@@ -9,7 +9,7 @@
    right:0;
    height: 250px;
    width: 350px;
-
+   animation: fade-bottom 2s;
 }
 
 .modal_cart_popup .close {
