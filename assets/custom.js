@@ -163,12 +163,28 @@ function showLoader(obj, type, state)
 
     if(state)
     {
-        parentNode.querySelector('span[add-to-cart-text]').classList.add('hide');
-        parentNode.querySelector('span[data-loader]').classList.remove('hide');
+        if(type)
+        {
+            parentNode.querySelector('span[add-to-cart-text]').classList.add('hide');
+            parentNode.querySelector('span[data-loader]').classList.remove('hide');
+        }
+        else
+        {
+            parentNode.querySelector('span[buy-now-text]').classList.add('hide');
+            parentNode.querySelector('span[data-loader-buy-now]').classList.remove('hide');
+        }
     }
     else
     {
-        parentNode.querySelector('span[add-to-cart-text]').classList.remove('hide');
-        parentNode.querySelector('span[data-loader]').classList.add('hide');
+        if(type)
+        {
+            parentNode.querySelector('span[add-to-cart-text]').classList.remove('hide');
+            parentNode.querySelector('span[data-loader]').classList.add('hide');
+        }
+        else
+        {
+            parentNode.querySelector('span[buy-now-text]').classList.remove('hide');
+            parentNode.querySelector('span[data-loaderloader]').classList.add('hide');
+        }
     }
 }
