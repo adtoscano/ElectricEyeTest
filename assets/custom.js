@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
 
 function addItemToCart(obj, type, productId, quantity)
 {
-    showLoader(obj, true);
+    showLoader(obj, type, true);
 
     data = {
             "id": productId,
@@ -26,7 +26,7 @@ function addItemToCart(obj, type, productId, quantity)
                 addToCartFail(this);
             }
 
-            showLoader(obj, false);
+            showLoader(obj, type, false);
         }
     }
 
@@ -157,7 +157,7 @@ function getSelectedVariant(productId)
     return option.value;
 }
 
-function showLoader(obj, state)
+function showLoader(obj, type, state)
 {
     let parentNode = obj.parentNode;
 
