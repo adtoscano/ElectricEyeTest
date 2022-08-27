@@ -4,6 +4,9 @@ window.addEventListener('load', function () {
 
 function addItemToCart(type, productId, quantity)
 {
+    document.querySelector('span[data-add-to-cart-text]').classList.add('hide');
+    document.querySelector('span[data-loader]').classList.remove('hide');
+
     data = {
             "id": productId,
             "quantity": quantity
