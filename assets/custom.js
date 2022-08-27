@@ -159,6 +159,8 @@ function getSelectedVariant(productId)
 
 function showLoader(obj, state)
 {
+    const parentDiv = obj.parentNode;
+    console.log(parentDiv);
     if(state)
     {
         document.querySelector('span[add-to-cart-text]').classList.add('hide');
