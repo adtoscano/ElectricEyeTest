@@ -9,7 +9,7 @@
     {% endif %}
 
     {% if section.settings.custom_buy_now_button %}
-        <a id="add_buy_now_button" onclick="addItemToCart(false, '{{ product.first_available_variant.id }}', '&amp;quantity=1');"><button class="custom_button">BUY NOW</button></a>
+        <a id="add_buy_now_button" onclick="addItemToCart(this, false, '{{ product.first_available_variant.id }}', '&amp;quantity=1');"><button class="custom_button">BUY NOW</button></a>
     {% endif %}
 
     {% if section.settings.custom_add_to_cart_button %}
@@ -23,7 +23,7 @@
                 </button>
             </a>
         {% else -%}
-            <a id="add_to_cart_button" onclick="addItemToCart(true, getSelectedVariant('{{ product.id }}'), '&amp;quantity=1');"><button class="custom_button">ADD TO CART</button></a>
+            <a id="add_to_cart_button" onclick="addItemToCart(this, true, getSelectedVariant('{{ product.id }}'), '&amp;quantity=1');"><button class="custom_button">ADD TO CART</button></a>
         {% endif -%}
     {% endif %}
 
