@@ -9,16 +9,16 @@
    right:0;
    height: 250px;
    width: 350px;
-
-   transform: translateY(0);
-   transition: all .45s cubic-bezier(.29,.63,.44,1);
-
-   /*box-shadow: 1px 1px 10px 2px rgba(235, 235, 235, 0.5);*/
 }
 
-.w3-animate-top{/*position:relative;*/
-    animation:animatetop 0.4s}
-    @keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.animate-top
+{
+    animation:animatetop 0.4s
+}
+
+@keyframes animatetop{
+    from{top:-300px;opacity:0} to{top:0;opacity:1}
+}
 
 .modal_cart_popup .close {
    position: absolute;
