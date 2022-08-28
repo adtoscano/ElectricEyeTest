@@ -10,10 +10,10 @@
    height: 250px;
    width: 350px;
 
-   /*transform: translateY(0);
+   transform: translateY(0);
    transition: all .45s cubic-bezier(.29,.63,.44,1);
 
-   box-shadow: 1px 1px 10px 2px rgba(235, 235, 235, 0.5);*/
+   /*box-shadow: 1px 1px 10px 2px rgba(235, 235, 235, 0.5);*/
 }
 
 .modal_cart_popup .close {
