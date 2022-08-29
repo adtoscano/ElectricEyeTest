@@ -1,0 +1,26 @@
+<div class="modal_cart_popup animate-top hidden" id="modal_add_to_cart">
+    <div class="modal_cart_popup_header">
+        <span><strong>Just added to your cart</strong></span>
+        <button class="close" onclick="closeModal();">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 40 40"><path d="M23.868 20.015L39.117 4.78c1.11-1.108 1.11-2.77 0-3.877-1.109-1.108-2.773-1.108-3.882 0L19.986 16.137 4.737.904C3.628-.204 1.965-.204.856.904c-1.11 1.108-1.11 2.77 0 3.877l15.249 15.234L.855 35.248c-1.108 1.108-1.108 2.77 0 3.877.555.554 1.248.831 1.942.831s1.386-.277 1.94-.83l15.25-15.234 15.248 15.233c.555.554 1.248.831 1.941.831s1.387-.277 1.941-.83c1.11-1.109 1.11-2.77 0-3.878L23.868 20.015z" class="layer"></path></svg>
+        </button>
+    </div>
+    <hr style="margin-top:5px; margin-bottom:8px;"/>
+    <div id="wrapper">
+        <div id="modal_cart_popup_image">
+            <img id="modal_product_image" class="product_image" alt="product_image" src=""/>
+        </div>
+        <div id="modal_cart_popup_description">
+            <span id="product_title"><strong></strong></span>
+            </br>
+            Color:<span id="product_variant_title"></span>
+        </div>
+        <span id="modal_cart_popup_qty">Qty: 1</span>
+    </div>
+    <div class="modal_cart_popup_button">
+        <a id="btn_popup_cart" class="block" href="/cart" onclick="closeModal();">View CART</a>
+    </div>
+    <div class="modal_cart_popup_footer">
+        <a class="text-link text-link--accent" href="#"  onclick="closeModal();">Continue shopping</a>
+    </div>
+</div>
