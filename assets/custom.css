@@ -102,9 +102,9 @@
     font-size: 12px;
 }
 
-#error_message
+#div_error
 {
-    color:red;
+    display: none;
 }
 
 .custom_button
