@@ -58,10 +58,6 @@ function addToCartFail(obj, response)
 { 
     let parentNode = obj.parentNode;
 
-    console.log(parentNode);
-    
-//    parentNode.getElementById("div_error").style.display = 'block';
-//    parentNode.getElementById("error_message").innerHTML = JSON.parse(response.responseText).description;
     parentNode.querySelector("div[data-error]").style.display = 'block';
     parentNode.querySelector('span[data-error]').innerHTML = JSON.parse(response.responseText).description;
  }
