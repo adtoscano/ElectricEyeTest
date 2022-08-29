@@ -16,7 +16,7 @@
     animation:animatetop 0.4s
 }
 
-@keyframes animatetop{
+@keyframes animatetop {
     from{top:-300px;opacity:0} to{top:0;opacity:1}
 }
 
