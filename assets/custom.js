@@ -19,11 +19,11 @@ function addItemToCart(obj, type, productId, quantity)
         {
             if(this.status === 200)
             {
-                addToCartSuccess(type, this);
+                addToCartSuccess(type);
             }
             else
             {
-                addToCartFail(this);
+                addToCartFail(obj, this);
             }
 
             if(type == true || this.status != 200)
@@ -39,7 +39,7 @@ function addItemToCart(obj, type, productId, quantity)
     request.send(JSON.stringify(data));
 }
 
-function addToCartSuccess(type, obj) 
+function addToCartSuccess(type) 
 { 
     if(type === true)
     {
@@ -54,10 +54,14 @@ function addToCartSuccess(type, obj)
     }
 }
 
-function addToCartFail(obj) 
+function addToCartFail(obj, response) 
 { 
+   let parentNode = obj.parentNode;
+
+   console.log(parentNode);
+
    document.getElementById("div_error").style.display = 'block';
-   document.getElementById("error_message").innerHTML = JSON.parse(obj.responseText).description;
+   document.getElementById("error_message").innerHTML = JSON.parse(response.responseText).description;
  }
 
  function updateCartCounter(cart)
