@@ -1,0 +1,49 @@
+{% comment %} Phase 1b
+{% endcomment %}
+
+
+{% if product.available %}
+
+    {% if section.settings.custom_show_products_variants %}
+        {% include 'custom-products-variants' %}
+    {% endif %}
+
+    {% if section.settings.custom_buy_now_button %}
+        <a id="add_buy_now_button" onclick="addItemToCart(this, false, '{{ product.first_available_variant.id }}', '&amp;quantity=1');">
+            <button class="custom_button">
+                <span buy-now-text>BUY NOW</span>
+                <span class="hide" data-loader-buy-now="">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-spinner" viewBox="0 0 20 20"><path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path></svg>
+                </span>
+            </button>
+        </a>
+    {% endif %}
+
+    {% if section.settings.custom_add_to_cart_button %}
+        {% if product.variants.size == 1 -%}
+            <a id="add_to_cart_button" onclick="addItemToCart(this, true, '{{ product.first_available_variant.id }}', '&amp;quantity=1');">
+                <button class="custom_button">
+                    <span add-to-cart-text>ADD TO CART</span>
+                    <span class="hide" data-loader="">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-spinner" viewBox="0 0 20 20"><path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path></svg>
+                    </span>
+                </button>
+            </a>
+        {% else -%}
+            <a id="add_to_cart_button" onclick="addItemToCart(this, true, getSelectedVariant('{{ product.id }}'), '&amp;quantity=1');">
+                <button class="custom_button">
+                    <span add-to-cart-text>ADD TO CART</span>
+                    <span class="hide" data-loader="">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-spinner" viewBox="0 0 20 20"><path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path></svg>
+                    </span>
+                </button>
+            </a>
+        {% endif -%}
+    {% endif %}
+
+    <div id="div_error" data-error role="alert">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-error" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M7 0a7 7 0 0 1 7 7 7 7 0 1 1-7-7z"></path><path class="icon-error__symbol" d="M6.328 8.396l-.252-5.4h1.836l-.24 5.4H6.328zM6.04 10.16c0-.528.432-.972.96-.972s.972.444.972.972c0 .516-.444.96-.972.96a.97.97 0 0 1-.96-.96z"></path></g></svg>
+        <span id="error_message" class="product-form__error-message" data-error></span>
+    </div>
+
+{% endif %}
