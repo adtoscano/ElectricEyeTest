@@ -2,8 +2,10 @@ window.addEventListener('load', function () {
     updateDefaultOption();
 });
 
-function addItemToCart(type, productId, quantity)
+function addItemToCart(obj, type, productId, quantity)
 {
+    showLoader(obj, type, true);
+
     data = {
             "id": productId,
             "quantity": quantity
@@ -22,6 +24,11 @@ function addItemToCart(type, productId, quantity)
             else
             {
                 addToCartFail(this);
+            }
+
+            if(type == true || this.status != 200)
+            {
+                showLoader(obj, type, false);
             }
         }
     }
@@ -151,4 +158,36 @@ function getSelectedVariant(productId)
     var option = select.options[select.selectedIndex];
 
     return option.value;
+}
+
+function showLoader(obj, type, state)
+{
+    let parentNode = obj.parentNode;
+
+    if(state)
+    {
+        if(type)
+        {
+            parentNode.querySelector('span[add-to-cart-text]').classList.add('hide');
+            parentNode.querySelector('span[data-loader]').classList.remove('hide');
+        }
+        else
+        {
+            parentNode.querySelector('span[buy-now-text]').classList.add('hide');
+            parentNode.querySelector('span[data-loader-buy-now]').classList.remove('hide');
+        }
+    }
+    else
+    {
+        if(type)
+        {
+            parentNode.querySelector('span[add-to-cart-text]').classList.remove('hide');
+            parentNode.querySelector('span[data-loader]').classList.add('hide');
+        }
+        else
+        {
+            parentNode.querySelector('span[buy-now-text]').classList.remove('hide');
+            parentNode.querySelector('span[data-loaderloader]').classList.add('hide');
+        }
+    }
 }

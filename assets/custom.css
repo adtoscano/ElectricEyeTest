@@ -9,7 +9,15 @@
    right:0;
    height: 250px;
    width: 350px;
+}
 
+.animate-top
+{
+    animation:animatetop 0.4s
+}
+
+@keyframes animatetop {
+    from{top:-300px;opacity:0} to{top:0;opacity:1}
 }
 
 .modal_cart_popup .close {
@@ -32,6 +40,7 @@
 
 .hidden {
    display: none;
+   transform: translateY(-100%);
 }
 
 .product_image {
@@ -118,4 +127,16 @@
     width: 100%;
     padding: 5px 22px;
     margin-bottom: 10px;
+}
+
+@keyframes fade-bottom 
+{
+    100% {
+      transform: translateY(50px);
+     /* opacity: 0;*/
+    }
+    0% {
+      transform: translateY(0);
+     /* opacity: 1;*/
+    }
 }
