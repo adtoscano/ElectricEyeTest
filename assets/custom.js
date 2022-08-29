@@ -60,8 +60,8 @@ function addToCartFail(obj, response)
 
    console.log(parentNode);
 
-   document.getElementById("div_error").style.display = 'block';
-   document.getElementById("error_message").innerHTML = JSON.parse(response.responseText).description;
+   parentNode.getElementById("div_error").style.display = 'block';
+   parentNode.getElementById("error_message").innerHTML = JSON.parse(response.responseText).description;
  }
 
  function updateCartCounter(cart)
