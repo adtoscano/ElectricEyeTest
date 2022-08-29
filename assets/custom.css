@@ -104,12 +104,12 @@
 
 #div_error
 {
-    color:red;
+    display: none;
 }
 
 #error_message
 {
-    display: none;
+    color:red;
 }
 
 .custom_button
